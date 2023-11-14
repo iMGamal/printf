@@ -11,18 +11,18 @@
  */
 int _printf(const char *format, ...)
 {
-	int F;
+	int i;
 
-	char *random;
+	i = 0;
 
 	if (*format == '\0')
 	{
-		printf("format for me is %c\n", F);
+		printf("decision is %s\n", format);
 		return (0);
 	}
-	else;
+	else
 	{
-		printf("format for me is %s\n", random);
+		printf("format for me is %c\n",i);
 		return (0);
 	}
 		return (0);
