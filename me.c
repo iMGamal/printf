@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * _printf - a function that produces output according to a format.
@@ -14,10 +15,9 @@
 int _printf(const char *format, ...)
 {
 	int i;
-	int percent;
+	va_list percent;
 
 	i = 0;
-	percent = 25;
 
 	if (*format == 0)
 	{
@@ -26,12 +26,12 @@ int _printf(const char *format, ...)
 	}
 	else if (*format > 0)
 	{
-		printf("decision for me is %s\n", format);
+		printf("string is a loose %s\n", format);
 		return (0);
 	}
-	else
+	va_start(percent, *format);
 	{
-		printf("% is the goal\n", percent);
+		printf("for us it is relative %s\n", percent);
 		return (0);
 	}
 		return (0);
