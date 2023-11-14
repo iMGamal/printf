@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
- * _printf - function for formatted printing
+ * _printf - formatted printing
  * @const - argument input
  * @char - argument input
  * @*format - input to be printed
@@ -19,7 +20,7 @@ int _printf(const char *format, ...)
 		printf("format for me is %c\n", F);
 		return (0);
 	}
-	else
+	else;
 	{
 		printf("format for me is %s\n", random);
 		return (0);
