@@ -14,17 +14,24 @@
 int _printf(const char *format, ...)
 {
 	int i;
+	int percent;
 
 	i = 0;
+	percent = 25;
 
-	if (*format == '\0')
+	if (*format == 0)
 	{
-		printf("decision is %s\n", format);
+		printf("format for me is %c\n", i);
+		return (0);
+	}
+	else if (*format > 0)
+	{
+		printf("decision for me is %s\n", format);
 		return (0);
 	}
 	else
 	{
-		printf("format for me is %c\n", i);
+		printf("% is the goal\n", percent);
 		return (0);
 	}
 		return (0);
