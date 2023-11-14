@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * a function that produces output according to a format.
+ * _printf - a function that produces output according to a format.
  *
  * @const - argument input
  * @char * - argument input
