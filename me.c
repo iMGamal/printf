@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "main.h"
 
+#ifndef __PRINTF_
+#define __PRINTF_
+
 /**
  * _printf - function that produces output according to a format
  * @const - argument input
@@ -9,6 +12,9 @@
  * @... - ellipsis for variadic function
  * Return: Always 0 (Success).
  */
+
+#endif
+
 int _printf(const char *format, ...)
 {
 	int i;
