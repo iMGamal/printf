@@ -2,6 +2,7 @@
 #include "main.h"
 
 /**
+ * int - return data type
  * _printf - entry point
  * @const - argument input
  * @char * - argument input
