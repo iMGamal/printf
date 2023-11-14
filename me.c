@@ -6,7 +6,7 @@
  *
  * @const - argument input
  * @char - argument input
- * @*format - is a character string.
+ * @*format, - is a character string.
  * @... - ellipsis for variadic function
  * Return: Always 0 (Success).
  */
