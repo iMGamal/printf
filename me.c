@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	}
 	else
 	{
-		printf("format for me is %c\n",i);
+		printf("format for me is %c\n", i);
 		return (0);
 	}
 		return (0);
