@@ -2,8 +2,7 @@
 #include "main.h"
 
 /**
- * int - return data type
- * _printf - entry point
+ * int _printf - function that returns formatted printing
  * @const - argument input
  * @char * - argument input
  * @format - character string
