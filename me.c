@@ -2,10 +2,11 @@
 #include "main.h"
 
 /**
- * int _printf - function that returns formatted printing
+ * a function that produces output according to a format.
+ *
  * @const - argument input
  * @char * - argument input
- * @format - character string
+ * @format - is a character string.
  * @... - ellipsis for variadic function
  * Return: Always 0 (Success).
  */
