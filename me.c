@@ -4,11 +4,11 @@
 #include "main.h"
 
 /**
- *_printf - a function that produces output according to a format.
- *@const - data input
- *@char * - data input
- *@format - a character string.
- *Return : the number of characters printed (excluding the null byte used to end output to strings).
+ * _printf - a function that produces formatted output.
+ * @const - data input
+ * @char * - data input
+ * @format - a character string.
+ * Return : the number of characters printed.
  */
 int _printf(const char *format, ...)
 {
