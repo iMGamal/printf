@@ -17,16 +17,13 @@ int _printf(const char *format, ...)
 
 	if (*format > 0)
 	{
-		printf("%s",ptr);
+		printf("%s", format);
 	}
-	else if (*format == 0)
+	if (*format == 0)
 	{
-		printf("%c",print);
+		printf("%c", print);
 	}
-	else
-	{
-		printf("%s",format);
-	}
+	print = va_arg(ptr, int);
 	va_end(ptr);
 	return (print);
 }
