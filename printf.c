@@ -22,11 +22,6 @@ int _printf(const char *format, ...)
 		{
 			total += _printf(format);
 		}
-		else
-		{
-			total += write(1, format, 1);
-			format++;
-		}
 	}
 	va_end(mg);
 	return (total);
