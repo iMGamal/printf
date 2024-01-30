@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	total = 0;
 	while(*format != '\0')
 	{
-		if (*format == '%')
+		if (*format == '%' || *format == 'c' || *format == 's')
 		{
 			total += _printf(format++, mg);
 		}
