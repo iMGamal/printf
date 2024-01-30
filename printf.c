@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			total += va_arg(mgamal, int);
-			*(format++);
+			format++;
 		}
 		else
 		{
