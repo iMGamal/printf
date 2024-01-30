@@ -36,6 +36,14 @@ int _printf(const char *format, ...)
 			format++;
 		}
 	}
+	while(*format != 0)
+	{
+		if (*format == 'c')
+		{
+			total += va_arg(mgamal, int);
+			format++;
+		}
+	}
 	va_end(mgamal);
 	return (total);
 }
