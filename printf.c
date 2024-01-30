@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 		{
 			total += va_arg(mgamal, int);
 		}
+		if (*format == '%')
+		{
+			total += va_arg(mgamal, int);
+		}
 	}
 	va_end(mgamal);
 	return (total);
