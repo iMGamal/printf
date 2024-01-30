@@ -10,40 +10,24 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list mgamal;
+	va_list mg;
 
 	int total;
 
-	va_start(mgamal, format);
+	va_start(mg, format);
+	total = 0;
 	while(*format != '\0')
 	{
 		if (*format == '%')
 		{
-			total += va_arg(mgamal, int);
-			format++;
+			total += _printf(format++, mg);
 		}
-		if (*format == 's')
+		else
 		{
-			total += va_arg(mgamal, int);
+			total += write(1, format, 1);
 			format++;
 		}
 	}
-	while(*format == '\0')
-	{
-		if (*format == 'c')
-		{
-			total += va_arg(mgamal, int);
-			format++;
-		}
-	}
-	while(*format != 0)
-	{
-		if (*format == 'c')
-		{
-			total += va_arg(mgamal, int);
-			format++;
-		}
-	}
-	va_end(mgamal);
+	va_end(mg);
 	return (total);
 }
