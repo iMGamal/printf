@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <stdarg.h>
-#include <main.h>
 
 /**
  * _printf - Entry point
@@ -9,18 +9,23 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list ap;
+	va_list mgamal;
 
-	int c = 0; int s = 0;
+	int total;
 
-	va_start(ap, format);
-	if (*format == c)
+	va_start(mgamal, format);
+	total = 0;
+	while(*format != '\0')
 	{
-		printf("%c\n", va_arg(ap, int));
+		if (*format == '%')
+		{
+			total += va_arg(mgamal, int);
+			*(format++);
+		}
+		else
+		{
+			total += write(1, format, 1);
+		}
 	}
-	if (*format == s)
-	{
-		printf("%d\n", va_arg(ap, int));
-	}
-	return (0);
+	return (total);
 }
