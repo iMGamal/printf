@@ -6,7 +6,7 @@
 /**
  * _printf - Entry point
  * @format - argument passed to function
- * Return - 0
+ * Return - _printf
  */
 int _printf(const char *format, ...)
 {
@@ -29,6 +29,16 @@ int _printf(const char *format, ...)
 			format++;
 		}
 		if (*format == 's')
+		{
+			total += va_arg(mgamal, int);
+			format++;
+		}
+		if (*format == 'd')
+		{
+			total += va_arg(mgamal, int);
+			format++;
+		}
+		if (*format == 'x')
 		{
 			total += va_arg(mgamal, int);
 			format++;
