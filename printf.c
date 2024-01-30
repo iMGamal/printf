@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	int total;
 
 	va_start(mgamal, format);
-	total = 0;
 	while(*format != '\0')
 	{
 		if (*format == '%')
@@ -32,11 +31,6 @@ int _printf(const char *format, ...)
 	while(*format == '\0')
 	{
 		if (*format == 'c')
-		{
-			total += va_arg(mgamal, int);
-			format++;
-		}
-		if (*format == 's')
 		{
 			total += va_arg(mgamal, int);
 			format++;
