@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == 'c')
 		{
-			total += _printf(format++, mg);
+			total += _printf(format);
 		}
 		else
 		{
