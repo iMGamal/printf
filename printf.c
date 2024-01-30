@@ -28,17 +28,6 @@ int _printf(const char *format, ...)
 			format++;
 		}
 	}
-	while(*format == '\0')
-	{
-		if(*format == 'c')
-		{
-			total += _printf(format++, mg);
-		}
-		else
-		{
-			total += write(1, format, 1);
-		}
-	}
 	va_end(mg);
 	return (total);
 }
