@@ -34,10 +34,12 @@ int _printf(const char *format, ...)
 		if (*format == 'c')
 		{
 			total += va_arg(mgamal, int);
+			format++;
 		}
-		if (*format == '%')
+		if (*format == 's')
 		{
 			total += va_arg(mgamal, int);
+			format++;
 		}
 	}
 	va_end(mgamal);
