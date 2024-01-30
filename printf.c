@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	total = 0;
 	while(*format != '\0')
 	{
-		if (*format == '%' || *format == 'c' || *format == 's')
+		if (*format == '%')
 		{
 			total += _printf(format++, mg);
 		}
@@ -26,6 +26,17 @@ int _printf(const char *format, ...)
 		{
 			total += write(1, format, 1);
 			format++;
+		}
+	}
+	while(*format == '\0')
+	{
+		if(*format == 's')
+		{
+			total += _printf(format++, mg);
+		}
+		else
+		{
+			total += write(1, format, 1);
 		}
 	}
 	va_end(mg);
