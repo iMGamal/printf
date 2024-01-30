@@ -1,29 +1,25 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "main.h"
 
 /**
- * _printf - produces output according to a format
- * @format : character string
- * Return : number of characters printed
+ * _printf - Entry point
+ * @format - argument passed to function
+ * Return - 0
  */
 int _printf(const char *format, ...)
 {
-	int print = 0;
+	va_list ap;
 
-	va_list ptr;
+	int c = 0; int s = 0;
 
-	va_start(ptr, format);
-
-	if (*format > 0)
+	va_start(ap, format);
+	if (*format == c)
 	{
-		printf("%s", format);
+		printf("%c\n", va_arg(ap, int));
 	}
-	if (*format == 0)
+	if (*format == s)
 	{
-		printf("%c", print);
+		printf("%d\n", va_arg(ap, int));
 	}
-	print = va_arg(ptr, int);
-	va_end(ptr);
-	return (print);
+	return (0);
 }
