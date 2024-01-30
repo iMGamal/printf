@@ -23,25 +23,17 @@ int _printf(const char *format, ...)
 			total += va_arg(mgamal, int);
 			format++;
 		}
-		if (*format == 'c')
-		{
-			total += va_arg(mgamal, int);
-			format++;
-		}
 		if (*format == 's')
 		{
 			total += va_arg(mgamal, int);
 			format++;
 		}
-		if (*format == 'd')
+	}
+	while(*format == '\0')
+	{
+		if (*format == 'c')
 		{
 			total += va_arg(mgamal, int);
-			format++;
-		}
-		if (*format == 'x')
-		{
-			total += va_arg(mgamal, int);
-			format++;
 		}
 	}
 	va_end(mgamal);
