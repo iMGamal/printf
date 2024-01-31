@@ -22,9 +22,13 @@ int _printf(const char *format, ...)
 		{
 			num += _printf(format++, jj);
 		}
+	}
+	while (*format == '\0')
+	{
 		if (*format == 's')
 		{
-			num += _printf(format++, jj):
+			num += _printf(format++, jj);
+		}
 		else
 		{
 			write(1, format, 1);
