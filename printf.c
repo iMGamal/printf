@@ -23,15 +23,13 @@ int _printf(const char *format, ...)
 			num += _printf(format);
 			format--;
 		}
+	}
+	while (*format == '\0')
+	{
 		if (*format == 'c')
 		{
 			num += _printf(format);
-			format--;
-		}
-		if (*format == 's')
-		{
-			num += _printf(format);
-			format--;
+			format++;
 		}
 	}
 	va_end(jj);
