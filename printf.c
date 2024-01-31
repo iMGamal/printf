@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	}
 	while (*format == '\0')
 	{
-		if (*format == 's')
+		if (*format == 'c')
 		{
 			num += _printf(format++, jj);
 		}
