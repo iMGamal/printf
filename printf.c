@@ -16,11 +16,24 @@ int _printf(const char *format, ...)
 
 	va_start(mg, format);
 	total = 0;
-	while (*format != '\0')
+	while (*format)
 	{
+		if (*format == '%')
+		{
+			write(1, format, 1);
+			total++;
+		}
 		if (*format == 'c')
 		{
-			total += _printf(format);
+			char c = va_arg(mg, int);
+			write(1, &c, 1);
+			total++;
+		}
+		else if (*format == 's')
+		{
+			char *string = va_arg(mg, char*);
+			write(1, &string, 1);
+			total++;
 		}
 	}
 	va_end(mg);
