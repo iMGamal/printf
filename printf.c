@@ -5,7 +5,7 @@
 
 /**
  * _printf - Entry point
- * @format - string
+ * @format - character string
  * Return - _printf
  */
 int _printf(const char *format, ...)
