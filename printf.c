@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			total += write(1, format, 1);
+			num += write(1, format, 1);
 			format++;
 		}
 	}
