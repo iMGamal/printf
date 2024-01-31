@@ -18,10 +18,13 @@ int _printf(const char *format, ...)
 	num = 0;
 	while (*format != '\0')
 	{
-		if (*format == 'c')
+		if (*format == '%')
 		{
 			num += _printf(format++, jj);
 		}
+		if (*format == 's')
+		{
+			num += _printf(format++, jj):
 		else
 		{
 			write(1, format, 1);
