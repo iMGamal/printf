@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 		if (*format == 's')
 		{
 			num += _printf(format++, jj);
+		}
 		else
 		{
 			num += write(1, format, 1);
