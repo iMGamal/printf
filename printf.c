@@ -23,6 +23,16 @@ int _printf(const char *format, ...)
 			num += _printf(format);
 			format--;
 		}
+		if (*format == 'c')
+		{
+			num += _printf(format);
+			format--;
+		}
+		if (*format == 's')
+		{
+			num += _printf(format);
+			format--;
+		}
 	}
 	va_end(jj);
 	return (num);
