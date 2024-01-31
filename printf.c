@@ -6,36 +6,24 @@
 /**
  * _printf - Entry point
  * @format - character string
- * Return - _printf
+ * Return - numbers of characters printed
  */
 int _printf(const char *format, ...)
 {
-	va_list mg;
+	va_list jj;
 
-	int total;
+	int num;
 
-	va_start(mg, format);
-	total = 0;
+	va_start(jj, format);
+	num = 0;
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
-			write(1, format, 1);
-			total++;
-		}
-		if (*format == 'c')
-		{
-			char c = va_arg(mg, int);
-			write(1, &c, 1);
-			total++;
-		}
-		else if (*format == 's')
-		{
-			char *string = va_arg(mg, char*);
-			write(1, &string, 1);
-			total++;
+			num += _printf(format);
+			format--;
 		}
 	}
-	va_end(mg);
-	return (total);
+	va_end(jj);
+	return (num);
 }
