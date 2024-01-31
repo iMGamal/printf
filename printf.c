@@ -22,16 +22,10 @@ int _printf(const char *format, ...)
 		{
 			num += _printf(format++, jj);
 		}
-	}
-	while (*format == '\0')
-	{
-		if (*format == 'c')
-		{
-			num += _printf(format++, jj);
-		}
 		else
 		{
-			write(1, format, 1);
+			total += write(1, format, 1);
+			format++;
 		}
 	}
 	va_end(jj);
