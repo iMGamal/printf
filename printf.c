@@ -4,9 +4,9 @@
 #include <stdarg.h>
 
 /**
- * _printf - Entry point
- * @format - character string
- * Return - numbers of characters printed
+ * _printf - Entry prints name
+ * @format: name
+ * Return - int
  */
 int _printf(const char *format, ...)
 {
