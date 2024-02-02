@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	num = 0;
 	while (*format != '\0')
 	{
-		if (*format == '%')
+		if (*format == 'c')
 		{
 			num += _printf(format++, jj);
 		}
@@ -28,17 +28,6 @@ int _printf(const char *format, ...)
 			format++;
 		}
 	}
-	while (*format == '\0')
-	{
-		if (*format == 's')
-		{
-			num += _printf(format++, jj);
-		}
-		else
-		{
-			num += write(1, format, 1);
-			format++;
-		}
 	va_end(jj);
 	return (num);
 }
