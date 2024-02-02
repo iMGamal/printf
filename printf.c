@@ -6,7 +6,7 @@
 /**
  * _printf - Entry prints name
  * @format: name
- * Return - int
+ * Return - number of characters
  */
 int _printf(const char *format, ...)
 {
