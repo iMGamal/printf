@@ -22,24 +22,11 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			x += _printf(format++, ap);
+			x += _printf(ap, format++);
 		}
 		else
 		{
 			x += write(1, format, 1);
-		}
-		switch (format[x])
-		{
-			case 'c':
-				{
-					x += _printf(va_arg(ap, char *));
-					break;
-				}
-			case 's':
-				{
-					x += _printf(va_arg(ap, char *));
-					break;
-				}
 		}
 		format++;
 	}
