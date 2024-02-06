@@ -18,14 +18,13 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 	x = 0;
-	while (*format != '\0')
+	while (format[x] != '\0')
 	{
-		if (format == NULL)
+		if (format[x] == '%')
 		{
 			x += _printf(va_arg(ap, char *));
 			write(1, &format, 1);
 		}
-		format++;
 	}
 	va_end(ap);
 	return (x);
