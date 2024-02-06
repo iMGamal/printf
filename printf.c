@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			x += _printf(va_arg(ap, char *));
 			write(1, &format, 1);
 		}
-		else if (strcmp(format, "%c") == 0)
+		else if ("%c")
 		{
 			x += _printf(format++, ap);
 		}
