@@ -29,6 +29,10 @@ int _printf(const char *format, ...)
 			format++;
 		}
 	}
+	if (*format == '%%')
+	{
+		i += _printf(format++, ap);
+	}
 	va_end(ap);
 	return (i);
 }
