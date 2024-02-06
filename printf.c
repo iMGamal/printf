@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <unistd.h>
 #include <stdarg.h>
 
 /**
@@ -20,9 +21,13 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			i += _printf(format, ap);
-			format++;
+			i += _printf(format++, ap);
 		}
+		else
+		{
+			i += write(1, format, 1);
+		}
+		format++;
 	}
 	va_end(ap);
 	return (i);
