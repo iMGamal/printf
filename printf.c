@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			i += write(1, format, 1);			format++;
+			i += fwrite(1, format, 1);			format++;
 		}
 	}
 	va_end(ap);
