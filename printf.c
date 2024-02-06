@@ -24,6 +24,7 @@ int _printf(const char *format, ...)
 			i += _printf(format++, ap);
 		}
 		format++;
+	}
 	va_end(ap);
 	return (i);
 }
