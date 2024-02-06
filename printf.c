@@ -18,9 +18,9 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 	x = 0;
-	while (format[x] != '\0')
+	while (*format != '\0')
 	{
-		if (format[x] == 'c')
+		if (*format == 0)
 		{
 			x += _printf(va_arg(ap, char *));
 			write(1, &format, 1);
