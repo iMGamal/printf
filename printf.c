@@ -26,28 +26,34 @@ int _printf(const char *format, ...)
 		}
 		else if (format == NULL)
 		{
+			_printf(va_arg(ap, char *));
 			write(1, format, 1);
 		}
 		else
 		{
 			if (*format == 'c')
 			{
+				_printf(va_arg(ap, char *));
 				write(1, format, 1);
 			}
 			if (*format == 's')
 			{
+				_printf(va_arg(ap, char *));
 				write(1, format, 1);
 			}
 			if (*format == 'd')
 			{
+				_printf(va_arg(ap, char *));
 				write(1, format, 1);
 			}
 			if (*format == 'i')
 			{
+				_printf(va_arg(ap, char *));
 				write(1, format, 1);
 			}
 			if (*format == '%')
 			{
+				_printf(va_arg(ap, char *));
 				write(1, format, 1);
 			}
 		}
