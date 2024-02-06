@@ -1,42 +1,32 @@
 #include "main.h"
 #include <stdio.h>
-#include <unistd.h>
 #include <stdarg.h>
 
 /**
- * _printf - Entry prints name
- * @format: name
- * Return - number of characters
+ * _printf - Entry point
+ * Description - function that produces output according to a format
+ * @format: character string
+ * Return - i
  */
 int _printf(const char *format, ...)
 {
-	va_list jj;
+	va_list ap;
 
-	int num; int x; int y;
+	int i;
 
-	va_start(jj, format);
-	num = 0; x = 0; y = 0;
+	va_start(ap, format);
+	i = 0;
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
-			num += _printf(format++, jj);
-		}
-		if (*format == 's')
-		{
-			x += _printf(format++, jj);
-		}
-		if (*format == 'c')
-		{
-			y += _printf(format++, jj);
+			i += _printf(format++);
 		}
 		else
 		{
-			num += write(1, format, 1);
-			format++;
+			i += fwrite(1, format,1);			format++;
 		}
 	}
-	va_end(jj);
-	return (num);
-
+	va_end(ap);
+	return (i);
 }
