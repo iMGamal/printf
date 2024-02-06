@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format == NULL)
 		{
 			x += _printf(va_arg(ap, char *));
-			write(2, format, 2);
+			write(1, &format, 1);
 		}
 		format++;
 	}
