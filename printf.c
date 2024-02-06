@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			x += _printf(ap, format++);
+			x += _printf(va_arg(ap, char *));
 		}
 		else
 		{
