@@ -19,39 +19,8 @@ int _printf(const char *format, ...)
 	x = 0;
 	while (*format != '\0')
 	{
-		if (*format == '%')
-		{
-			x += _printf(format++, ap);
-		}
-		else
-		{
-			x += write(1, format, 1);
-			format++;
-		}
-	}
-	while (*format == '\0')
-	{
-		if (*format == 'c')
-		{
-			x += _printf(va_arg(ap, char *));
-		}
-		else if (*format == 's')
-		{
-			x += _printf(va_arg(ap, char *));
-		}
-		else if (*format == 'd')
-		{
-			x += _printf(va_arg(ap, char *));
-		}
-		else if (*format == 'i')
-		{
-			x += _printf(va_arg(ap, char *));
-		}
-		else
-		{
-			write(1, format, 1);
-		}
-	format++;
+		x += _printf(format++, ap);
+		format++;
 	}
 	va_end(ap);
 	return (x);
