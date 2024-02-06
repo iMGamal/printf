@@ -27,14 +27,14 @@ int _printf(const char *format, ...)
 		}
 		else if (format == NULL)
 		{
-			break;
+			return (0);
 		}
 		else
 		{
 			if (*format == 'c')
 			{
 				write(1, format, 1);
-				x++;
+				x += _printf(va_arg(ap, char *);
 			}
 			if (*format == 's')
 			{
