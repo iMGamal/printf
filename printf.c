@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			if (*format == 'c')
 			{
 				write(1, format, 1);
-				x += _printf(va_arg(ap, char *));
+				x += _printf(format++, ap);
 			}
 			if (*format == 's')
 			{
