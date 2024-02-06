@@ -22,11 +22,6 @@ int _printf(const char *format, ...)
 	{
 		if (format == NULL)
 		{
-			x += _printf(format++, ap);
-			write(1, format, 1);
-		}
-		else
-		{
 			x += _printf(va_arg(ap, char *));
 			write(1, format, 1);
 		}
