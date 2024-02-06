@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 			x += _printf(va_arg(ap, char *));
 			write(1, &format, 1);
 		}
+		format++;
 	}
 	va_end(ap);
 	return (x);
