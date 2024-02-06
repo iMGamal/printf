@@ -1,14 +1,14 @@
 #include "main.h"
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 #include <stdarg.h>
 
 /**
  * _printf - Entry point
  * Description - function that produces output according to a format
  * @format: character string
- * Return - x
- * Description - returns number of characters printed
+ * Return - returns number of characters printed
  */
 int _printf(const char *format, ...)
 {
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			x += _printf(va_arg(ap, char *));
 			write(1, &format, 1);
 		}
-		else if (format == "%c")
+		else if (strcmp(format, "%c") == 0)
 		{
 			x += _printf(format++, ap);
 		}
