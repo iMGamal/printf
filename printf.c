@@ -19,8 +19,11 @@ int _printf(const char *format, ...)
 	x = 0;
 	while (*format != '\0')
 	{
-		x += _printf(format++, ap);
-		format++;
+		if (*format == '%')
+		{
+			write(1, format, 1);
+			format++;
+		}
 	}
 	va_end(ap);
 	return (x);
