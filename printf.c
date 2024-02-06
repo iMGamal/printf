@@ -24,11 +24,6 @@ int _printf(const char *format, ...)
 			i += _printf(format++, ap);
 		}
 		format++;
-		else
-		{
-			i += write(1, format, 1);
-		}
-	}
 	va_end(ap);
 	return (i);
 }
