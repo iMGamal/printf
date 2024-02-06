@@ -7,7 +7,7 @@
  * _printf - Entry point
  * Description - function that produces output according to a format
  * @format: character string
- * Return - int
+ * Return - x
  */
 int _printf(const char *format, ...)
 {
@@ -22,12 +22,9 @@ int _printf(const char *format, ...)
 		if (*format == ' ')
 		{
 			x += _printf(format++, ap);
-		}
-		if (*format == '%')
-		{
 			write(1, format, 1);
-			format++;
 		}
+		format++;
 	}
 	va_end(ap);
 	return (x);
