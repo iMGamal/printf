@@ -23,9 +23,9 @@ int _printf(const char *format, ...)
 		if (format == NULL)
 		{
 			x += _printf(va_arg(ap, char *));
+			format++;
 			write(1, format, 1);
 		}
-		format++;
 	}
 	va_end(ap);
 	return (x);
