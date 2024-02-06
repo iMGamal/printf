@@ -20,10 +20,13 @@ int _printf(const char *format, ...)
 	x = 0;
 	while (*format != '\0')
 	{
-		if ("%c")
+		if (format == '%')
 		{
-			x += _printf(va_arg(ap, char *));
-			write(1, format, 1);
+			x += _printf(format++, ap);
+		}
+		else
+		{
+			x += write(1, format, 1);
 		}
 		format++;
 	}
