@@ -33,27 +33,23 @@ int _printf(const char *format, ...)
 		{
 			if (*format == 'c')
 			{
-				x += _printf(format++, ap);
+				write(1, format, 1)(
 			}
 			if (*format == 's')
 			{
 				write(1, format, 1);
-				x++;
 			}
 			if (*format == 'd')
 			{
 				write(1, format, 1);
-				x++;
 			}
 			if (*format == 'i')
 			{
 				write(1, format, 1);
-				x++;
 			}
 			if (*format == '%')
 			{
-				write(1, format, 1);
-				x++;
+				putchar('%');
 			}
 		}
 		format++;
