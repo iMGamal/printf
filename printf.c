@@ -25,9 +25,9 @@ int _printf(const char *format, ...)
 			x += _printf(va_arg(ap, char *));
 			write(1, &format, 1);
 		}
-		else if (*format == '%')
+		else if (format == "%c")
 		{
-			va_arg(ap, char *);
+			x += _printf(format++, ap);
 		}
 		format++;
 	}
