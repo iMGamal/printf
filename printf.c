@@ -21,11 +21,6 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			i += _printf(format++, ap);
-			i++;
-		}
-		if (*format == 'c')
-		{
-			i += _printf(format++, ap);
 		}
 	}
 	va_end(ap);
