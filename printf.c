@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			format++;
 		}
 	}
-	if (*format == '%%')
+	if (*format == 'c')
 	{
 		i += _printf(format++, ap);
 	}
