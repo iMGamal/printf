@@ -22,11 +22,11 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			i += _printf(format++, ap);
+			format++;
 		}
 		else
 		{
 			i += write(1, format, 1);
-			format++;
 		}
 	}
 	va_end(ap);
