@@ -22,12 +22,11 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
-			x++;
+			x += _printf(va_arg(ap, char *));
 		}
 		else if (format == NULL)
 		{
-			return (0);
+			write(1, format, 1);
 		}
 		else
 		{
@@ -49,7 +48,7 @@ int _printf(const char *format, ...)
 			}
 			if (*format == '%')
 			{
-				putchar('%');
+				write(1, format, 1);
 			}
 		}
 		format++;
