@@ -12,53 +12,46 @@
  */
 int _printf(const char *format, ...)
 {
+	int total = 0;
+
 	va_list ap;
 
-	int x;
-
 	va_start(ap, format);
-	x = 0;
-	while (*format)
+	while (*format != '\0')
 	{
 		if (*format != '%')
 		{
-			x += _printf(va_arg(ap, char *));
-		}
-		else if (format == NULL)
-		{
-			_printf(va_arg(ap, char *));
-			write(1, format, 1);
+			putchar(*format);
+			total++;
 		}
 		else
 		{
-			if (*format == 'c')
+			switch (format[++total])
 			{
-				_printf(va_arg(ap, char *));
-				write(1, format, 1);
+				case 'c':
+					total += _printf("%c", va_arg(ap, int));
+					break;
+				case 's':
+					total += _printf("%s", va_arg(ap, char *));
+					break;
+				case '%':
+					total +=_printf("%%", va_arg(ap, int));
+					break;
+				case 'd':
+					total +=_printf("%d", va_arg(ap, int));
+					break;
+				case 'i':
+					total +=_printf("%i", va_arg(ap, int));
+					break;
+				default:
+					putchar('%');
+					putchar(*format);
+					total +=2;
+					break;
 			}
-			if (*format == 's')
-			{
-				_printf(va_arg(ap, char *));
-				write(1, format, 1);
-			}
-			if (*format == 'd')
-			{
-				_printf(va_arg(ap, char *));
-				write(1, format, 1);
-			}
-			if (*format == 'i')
-			{
-				_printf(va_arg(ap, char *));
-				write(1, format, 1);
-			}
-			if (*format == '%')
-			{
-				_printf(va_arg(ap, char *));
-				write(1, format, 1);
-			}
+			format++;
 		}
-		format++;
 	}
 	va_end(ap);
-	return (x);
+	return (total);
 }
