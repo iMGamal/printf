@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (format == NULL)
 			{
-				break;
+				write(1, format, 1);
+				total++;
 			}
 			if (*format == '\0')
 			{
@@ -37,8 +38,8 @@ int _printf(const char *format, ...)
 			}
 			if (*format == 'c')
 			{
-				char c = va_arg(ap, int);
-				write(1, &c, 1);
+				char *c = va_arg(ap, char *);
+				write(1, c, 1);
 				total++;
 			}
 			if (*format == 's')
