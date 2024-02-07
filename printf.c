@@ -29,10 +29,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (format == NULL)
 			{
-				while ((char *)0 == va_arg(ap, char *))
-				{
-					write(1, (char *)0, 1);
-				}
+				char *s = va_arg(ap, char *);
+				write(1, s, 1);
 				total++;
 			}
 			if (*format == '\0')
