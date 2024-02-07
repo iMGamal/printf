@@ -55,7 +55,8 @@ int _printf(const char *format, ...)
 			}
 			if (*format == '%')
 			{
-				write(1, format, 1);
+				char *percent = va_arg(ap, char *);
+				write(1, percent, 1);
 				total++;
 			}
 		}
