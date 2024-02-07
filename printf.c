@@ -16,11 +16,6 @@ int _printf(const char *format, ...)
 
 	va_list ap;
 
-	if (format == NULL)
-	{
-		return (-1);
-	}
-
 	va_start(ap, format);
 	while (*format != '\0')
 	{
@@ -55,8 +50,7 @@ int _printf(const char *format, ...)
 			}
 			if (*format == '%')
 			{
-				char *percent = va_arg(ap, char *);
-				write(1, percent, 1);
+				write(1, format, 1);
 				total++;
 			}
 		}
