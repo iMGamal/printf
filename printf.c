@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		if (*format != '%')
 		{
 			putchar(*format);
-			write(1, &format, 1);
+			write(1, format, 1);
 			total++;
 		}
 		else
@@ -31,23 +31,23 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					total += _printf("%c", va_arg(ap, int));
-					write(1, &format, 1);
+					write(1, format, 1);
 					break;
 				case 's':
 					total += _printf("%s", va_arg(ap, char *));
-					write(1, &format, 1);
+					write(1, format, 1);
 					break;
 				case '%':
 					total +=_printf("%%", va_arg(ap, int));
-					write(1, &format, 1);
+					write(1, format, 1);
 					break;
 				case 'd':
 					total +=_printf("%d", va_arg(ap, int));
-					write(1, &format, 1);
+					write(1, format, 1);
 					break;
 				case 'i':
 					total +=_printf("%i", va_arg(ap, int));
-					write(1, &format, 1);
+					write(1, format, 1);
 					break;
 				default:
 					putchar('%');
