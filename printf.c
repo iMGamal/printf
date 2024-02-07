@@ -27,14 +27,14 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			if (format == NULL)
-			{
-				write(1, format, 1);
-				total++;
-			}
 			if (*format == '\0')
 			{
 				break;
+			}
+			if (*format == '%')
+			{
+				write(1, format, 1);
+				total++;
 			}
 			if (*format == 'c')
 			{
@@ -52,11 +52,6 @@ int _printf(const char *format, ...)
 				}
 				write(1, string, string_length);
 				total += string_length;
-			}
-			if (*format == '%')
-			{
-				write(1, format, 1);
-				total += va_arg(ap, int);
 			}
 			if (*format == 'd')
 			{
