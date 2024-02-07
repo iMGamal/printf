@@ -27,6 +27,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
+			if (format == NULL)
+			{
+				break;
+			}
 			if (*format == '\0')
 			{
 				break;
