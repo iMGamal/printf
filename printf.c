@@ -58,6 +58,18 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				total++;
 			}
+			if (*format == 'd')
+			{
+				int d = va_arg(ap, int);
+				write(1, &d, 1);
+				total++;
+			}
+			if (*format == 'i')
+			{
+				int i = va_arg(ap, int);
+				write(1, &i, 1);
+				total++;
+			}
 		}
 		format++;
 	}
