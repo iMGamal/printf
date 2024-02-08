@@ -29,12 +29,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (format == NULL)
 			{
-				write(1, "(nil)", 5);
+				write(1, format, 1);
 				total++;
-			}
-			if (*format == '\0')
-			{
-				break;
 			}
 			if (*format == '%')
 			{
