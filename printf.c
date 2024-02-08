@@ -29,7 +29,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (format == NULL)
 			{
-				write(1, NULL, 1);
+				char nullchar = '\0';
+				putchar(nullchar);
 				total++;
 			}
 			if (*format == '\0')
