@@ -21,6 +21,14 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
+	while (*format == '\0')
+	{
+		if (*format == '%')
+		{
+			write(1, format, 1);
+		}
+		format++;
+	}
 	while (*format != '\0')
 	{
 		if (*format != '%')
@@ -33,8 +41,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				total = va_arg(ap, int);
 				write(1, format, 1);
+				total++;
 			}
 			if (*format == 'c')
 			{
