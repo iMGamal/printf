@@ -33,7 +33,8 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				total += _printf(format++, ap);
+				total = va_arg(ap, int);
+				write(1, format, 1);
 			}
 			if (*format == 'c')
 			{
