@@ -31,42 +31,42 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-		}
-		if (*format == '%')
-		{
-			write(1, format, 1);
-			total++;
-		}
-		if (*format == 'c')
-		{
-			char c = va_arg(ap, int);
-			write(1, &c, 1);
-			total++;
-		}
-		if (*format == 's')
-		{
-			char *string = va_arg (ap, char *);
-			int string_length = 0;
-			while (string[string_length] != '\0')
+			if (*format == '%')
 			{
-				string_length++;
+				write(1, "%", 1);
+				total++;
 			}
-			write(1, string, string_length);
-			total += string_length;
+			if (*format == 'c')
+			{
+				char c = va_arg(ap, int);
+				write(1, &c, 1);
+				total++;
+			}
+			if (*format == 's')
+			{
+				char *string = va_arg (ap, char *);
+				int string_length = 0;
+				while (string[string_length] != '\0')
+				{
+					string_length++;
+				}
+				write(1, string, string_length);
+				total += string_length;
+			}
+			if (*format == 'd')
+			{
+				int d = va_arg(ap, int);
+				write(1, &d, 1);
+				total++;
+			}
+			if (*format == 'i')
+			{
+				int i = va_arg(ap, int);
+				write(1, &i, 1);
+				total++;
+			}
+			format++;
 		}
-		if (*format == 'd')
-		{
-			int d = va_arg(ap, int);
-			write(1, &d, 1);
-			total++;
-		}
-		if (*format == 'i')
-		{
-			int i = va_arg(ap, int);
-			write(1, &i, 1);
-			total++;
-		}
-		format++;
 	}
 	va_end(ap);
 	return (total);
