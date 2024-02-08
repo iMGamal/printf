@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				putchar('%');
+				write(1, format, 2);
 				total++;
 			}
 			if (*format == 'c')
