@@ -21,14 +21,6 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	while (*format == '\0')
-	{
-		if (*format == '%')
-		{
-			write(1, format, 1);
-		}
-		format++;
-	}
 	while (*format != '\0')
 	{
 		if (*format != '%')
