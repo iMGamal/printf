@@ -65,8 +65,8 @@ int _printf(const char *format, ...)
 				write(1, &i, 1);
 				total++;
 			}
-			format++;
 		}
+		format++;
 	}
 	va_end(ap);
 	return (total);
