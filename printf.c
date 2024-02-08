@@ -31,6 +31,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
+		}
 			if (*format == '%')
 			{
 				write(1, format, 1);
@@ -49,10 +50,6 @@ int _printf(const char *format, ...)
 				while (string[string_length] != '\0')
 				{
 					string_length++;
-				}
-				if (*string == '\0')
-				{
-					putchar('\0');
 				}
 				write(1, string, string_length);
 				total += string_length;
