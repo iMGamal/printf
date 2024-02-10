@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	if (format == NULL)
 	{
-		format++;
+		return (-1);
 	}
 	while (*format != '\0')
 	{
@@ -51,6 +51,10 @@ int _printf(const char *format, ...)
 				while (string[string_length] != '\0')
 				{
 					string_length++;
+				}
+				if (string[string_length] == NULL)
+				{
+					write(1, string, string_length);
 				}
 				write(1, string, string_length);
 				total += string_length;
