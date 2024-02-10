@@ -34,14 +34,12 @@ int _printf(const char *format, ...)
 			if (*format == '%')
 			{
 				write(1, format, 1);
-				total++;
 			}
 			if (*format == 'c')
 			{
 				char c = va_arg(ap, int);
 
 				write(1, &c, 1);
-				total++;
 			}
 			if (*format == 's')
 			{
@@ -52,10 +50,6 @@ int _printf(const char *format, ...)
 				{
 					string_length++;
 				}
-				if (string  == NULL)
-				{
-					write(1, string, string_length);
-				}
 				write(1, string, string_length);
 				total += string_length;
 			}
@@ -64,15 +58,14 @@ int _printf(const char *format, ...)
 				int d = va_arg(ap, int);
 
 				write(1, &d, 1);
-				total++;
 			}
 			if (*format == 'i')
 			{
 				int i = va_arg(ap, int);
 				
 				write(1, &i, 1);
-				total++;
 			}
+			total++;
 		}
 		format++;
 	}
