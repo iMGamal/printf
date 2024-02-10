@@ -8,7 +8,7 @@
  * _printf - Entry point
  * Description - function that produces output according to a format
  * @format: character string
- * Return - total
+ * Return: total
  */
 int _printf(const char *format, ...)
 {
