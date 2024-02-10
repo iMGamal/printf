@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		char *p = NULL;
 
-		write(1, p, 1);
+		write(1, &p, 1);
 	}
 	while (*format != '\0')
 	{
