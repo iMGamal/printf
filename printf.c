@@ -39,13 +39,15 @@ int _printf(const char *format, ...)
 			if (*format == 'c')
 			{
 				char c = va_arg(ap, int);
+
 				write(1, &c, 1);
 				total++;
 			}
 			if (*format == 's')
 			{
-				char *string = va_arg (ap, char *);
+				char *string = va_arg(ap, char *);
 				int string_length = 0;
+				
 				while (string[string_length] != '\0')
 				{
 					string_length++;
@@ -56,12 +58,14 @@ int _printf(const char *format, ...)
 			if (*format == 'd')
 			{
 				int d = va_arg(ap, int);
+
 				write(1, &d, 1);
 				total++;
 			}
 			if (*format == 'i')
 			{
 				int i = va_arg(ap, int);
+				
 				write(1, &i, 1);
 				total++;
 			}
