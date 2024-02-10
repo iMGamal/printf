@@ -19,9 +19,7 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	if (format == NULL)
 	{
-		write(1, (char *)0, 1);
 		format++;
-		write(1, format, 1);
 	}
 	while (*format != '\0')
 	{
