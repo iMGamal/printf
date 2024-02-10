@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	va_start(ap, format);
 	if (format == NULL)
 	{
-		return (-1);
+		write(1, format, 1);
 	}
 	while (*format != '\0')
 	{
@@ -33,9 +33,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '%')
 			{
-				int percent = va_arg(ap, int);
-
-				write(1, &percent, 1);
+				write(1, format, 1);
 				total++;
 			}
 			if (*format == 'c')
