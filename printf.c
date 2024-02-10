@@ -29,9 +29,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (format == (char *)0)
 			{
-				char *p = va_arg(ap, char *);
-
-				write(1, p, 1);
+				write(1, (char *)0, 1);
 			}
 			if (*format == '%')
 			{
