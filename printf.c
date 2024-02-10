@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 				{
 					string_length++;
 				}
-				if (string[string_length] == NULL)
+				if (string  == NULL)
 				{
 					write(1, string, string_length);
 				}
