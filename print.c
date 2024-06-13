@@ -36,7 +36,10 @@ int _printf(const char *format, ...)
 				{
 					case 'c': {
 							int c;						c = va_arg(args, int);
-					  }
+							putchar(c);
+							x++;
+							break;
+						  }
 					case 's': {
 							  char *s;
 							  s = va_arg(args, char *);
