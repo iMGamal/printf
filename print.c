@@ -25,7 +25,11 @@ int _printf(const char *format, ...)
 		va_start(args, format);
 		for (p = format; *p != '\0'; p++)
 		{
-			if (*p == '%')
+			if (*p == '\0')
+			{
+				return (-1);
+			}
+			else if (*p == '%')
 			{
 				p++;
 				switch (*p)
@@ -61,10 +65,6 @@ int _printf(const char *format, ...)
 						 break;
 					 }
 				}
-			}
-			else if (p = "%")
-			{
-				putchar(*p);
 			}
 			else
 			{
