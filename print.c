@@ -62,12 +62,22 @@ int _printf(const char *format, ...)
 case 'd':
 case 'i':
 						  {
-							  int d, n;
-							  d = va_arg(args, int);
+							  int n;
 							  n = va_arg(args, int);
-							  putchar(n + '0');
-							  putchar(d + '0');
-							  x++;
+							  if (n < 0)
+							  {
+								  putchar('-');
+								  n = -n;
+							  }
+							  if (n > 0)
+							  {
+								  putchar((n/100) + '0');
+								  n = n%100;
+								  putchar((n/10) + '0');
+								  n = n%10;
+								  putchar(n + '0');
+								  n += x;
+							  }
 							  break;
 						  }
 				default: {
