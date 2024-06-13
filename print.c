@@ -83,7 +83,7 @@ case 'i':
 									  range[i++] = (n % 10) + '0';
 									  n /= 10;
 								  }
-								  for (int j = i - 1; j >= 0; j--)
+								  for(int j = i - 1; j >= 0; j--)
 								  {
 									  putchar(range[j]);
 									  x++;
