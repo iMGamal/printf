@@ -62,31 +62,32 @@ int _printf(const char *format, ...)
 case 'd':
 case 'i':
 						  {
-							  int n;
+							  int n, i;
+							  char range[50];
 							  n = va_arg(args, int);
-							  if (n < 0)
+							  i = 0;
+							  if (n == 0)
 							  {
-								  putchar('-');
-								  n = -n;
+								  range[i++] = '0';
 							  }
-							  if (n > 0)
+							  else
 							  {
-								  putchar((n/10000000) + '0');
-								  n = n%10000000;
-								  putchar((n/1000000) + '0');
-								  n = n%1000000;
-								  putchar((n/100000) + '0');
-								  n = n%100000;
-								  putchar((n/10000) + '0');
-								  n = n%10000;
-								  putchar((n/1000) + '0');
-								  n = n%1000;
-								  putchar((n/100) + '0');
-								  n = n%100;
-								  putchar((n/10) + '0');
-								  n = n%10;
-								  putchar(n + '0');
-								  n += x;
+								  if (n < 0)
+								  {
+								  	putchar('-');
+									x++;
+								  	n = -n;
+								  }
+								  while (n > 0)
+								  {
+									  range[i++] = (n % 10) + '0';
+									  n /= 10;
+								  }
+								  for (int j = i - 1; j >= 0; j--)
+								  {
+									  putchar(range[j]);
+									  x++;
+								  }
 							  }
 							  break;
 						  }
