@@ -36,8 +36,6 @@ int _printf(const char *format, ...)
 				{
 					case 'c': {
 							int c;						c = va_arg(args, int);
-	putchar(c);
-	x++;						break;
 					  }
 					case 's': {
 							  char *s;
@@ -60,14 +58,16 @@ int _printf(const char *format, ...)
 					}
 case 'd':
 						  {
-							  int d = va_arg(args, int);
+							  int d;
+							  d = va_arg(args, int);
 							  putchar(d);
 							  x++;
 							  break;
 						  }
 case 'i':
 						  {
-							  int i = va_arg(args, int);
+							  int i;
+							  i = va_arg(args, int);
 							  putchar(i);
 							  x++;
 							  break;
