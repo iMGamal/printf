@@ -62,9 +62,14 @@ int _printf(const char *format, ...)
 					 }
 				}
 			}
+			else if (p = "%")
+			{
+				putchar(*p);
+			}
 			else
 			{
 				putchar(*p);
+				x++;
 			}
 		}
 		va_end(args);
