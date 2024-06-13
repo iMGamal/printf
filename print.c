@@ -65,7 +65,7 @@ case 'i':
 							  int d, n;
 							  d = va_arg(args, int);
 							  n = va_arg(args, int);
-							  putchar(i);
+							  putchar(n);
 							  putchar(d);
 							  x++;
 							  break;
