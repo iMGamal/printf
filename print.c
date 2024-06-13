@@ -42,10 +42,6 @@ int _printf(const char *format, ...)
 							  {
 								  s = "(null)";
 							  }
-							  else if (s = "%")
-							  {
-								  return (-1);
-							  }
 							  while (*s)
 							  {
 								  putchar(*s++);
@@ -55,7 +51,6 @@ int _printf(const char *format, ...)
 					}
 					case '%': {
 							  putchar('%');
-							  x++;
 							  break;
 					}
 				default: {
