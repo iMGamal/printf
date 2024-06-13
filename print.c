@@ -51,6 +51,7 @@ int _printf(const char *format, ...)
 					}
 					case '%': {
 							  putchar('%');
+							  x++;
 							  break;
 					}
 				default: {
@@ -64,7 +65,6 @@ int _printf(const char *format, ...)
 			else
 			{
 				putchar(*p);
-				x++;
 			}
 		}
 		va_end(args);
