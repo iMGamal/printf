@@ -64,8 +64,10 @@ case 'i':
 						  {
 							  int d, n;
 							  d = va_arg(args, int);
-							  n = putchar(d);
-							  x += n;
+							  n = va_arg(args, int);
+							  putchar(i);
+							  putchar(d);
+							  x++;
 							  break;
 						  }
 				default: {
