@@ -33,14 +33,15 @@ x++;						break;
 					{
 						char *s;
 						s = va_arg(args, char *);
-						if (s)
+						if (s == NULL)
 						{
+							s = "(null)";
+						}
 							while (*s)
 							{
 								putchar(*s++);
 								x++;
 							}
-						}
 						break;
 					}
 					case '%':
