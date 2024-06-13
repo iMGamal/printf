@@ -58,6 +58,20 @@ int _printf(const char *format, ...)
 							  x++;
 							  break;
 					}
+case 'd':
+						  {
+							  int d = va_arg(args, int);
+							  putchar(d);
+							  x++;
+							  break;
+						  }
+case 'i':
+						  {
+							  int i = va_arg(args, int);
+							  putchar(i);
+							  x++;
+							  break;
+						  }
 				default: {
 						 putchar('%');
 						 putchar(*p);
